@@ -56,11 +56,22 @@ route::get('/search',[HomeController::class,'search']);
 
 route::get('/isikeranjang',[HomeController::class,'isikeranjang']);
 
+route::post('/updateproduct/{id}', [AdminController::class,'
+    updateproduct']);
 
+route::get('/search',[HomeController::class,'search']);
 
+route::post('/tambahkeranjang/{id}',[HomeController::class,'tambahkeranjang']);
 
+route::get('/lihatkeranjang', [HomeController::class,'lihatkeranjang']);
 
+route::get('/delete{id}', [HomeController::class,'deletekeranjang']);
 
+route::post('/beli', [HomeController::class,'konfirmasi']);
+
+route::get('showorder', [AdminController::class,'lihatkeranjang']);
+
+route::get('/updatestatus{id}', [AdminController::class,'updatestatus']);
 
 
 

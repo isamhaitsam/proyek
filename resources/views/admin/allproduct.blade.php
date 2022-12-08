@@ -47,7 +47,7 @@
                             <td>{{$product->Harga}}</td>
                             <td style="padding:20px;"><img height="100" width="100" src="/productimage/{{$product->foto}}" alt=""></td>
                             <td><a class="btn btn-primary" href="{{url('updateproduct',$product->id)}}">Update</a></td>
-                            <td><a class="btn btn-danger" href="{{url('deleteproduct',$product->id)}}">Delete</a></td>
+                            <td><a class="btn btn-danger" onclick="return confirm('Apakah Kamu Yakin?')" href="{{url('deleteproduct',$product->id)}}">Delete</a></td>
                         </tr>
 
                         @endforeach

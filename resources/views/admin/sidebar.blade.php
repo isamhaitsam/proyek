@@ -1,6 +1,8 @@
 <div class="container-scroller">
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+                <a class="sidebar-brand brand-logo" href="index.html"><img src="adimn/assets/images/logo.svg"alt="logo" /></a>
+                <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/omages/logo-mini.svg" alt="logo" /></a>
             <a class="navbar-brand" href="index.html"><h2>BUMDes <em>Sliyeg</em></h2></a>
 @csrf
             </div>
@@ -9,6 +11,7 @@
                 <div class="profile-desc">
                 <div class="profile-pic">
                     <div class="count-indicator">
+                        <img class="img-xs rounded-circle" src="admin/assets/images/faces/face15.jpg" alt="">
                     <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
@@ -95,6 +98,16 @@
                 <span class="menu-title">Semua Product</span>
                 </a>
             </li>
+
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="{{url('showorder')}}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-table-large"></i>
+                </span>
+                <span class="menu-title">Orders</span>
+                </a>
+            </li>
+
             <li class="nav-item menu-items">
                 <a class="nav-link" href="pages/charts/chartjs.html">
                 <span class="menu-icon">

@@ -99,12 +99,13 @@
         @if(session()->has('message'))
 
             <div class="alert alert-success">
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <button type="button" class="close" data-dismiss="alert">x</button>
                 {{session()->get('message')}}
             </div>
 
 
         @endif
+        
         </header>
 
         <div style="padding: 100px;" align="center">
@@ -124,8 +125,67 @@
             </table>
         </div>
 
+        <div style="padding : 100px;" align="center">
 
+            <table>
+                <tr style ="background-color:black;">
 
+                    <td style ="padding:10px; font-size: 20px; color:white;">
+                    Product Name</td>
+
+                    <td style ="padding:10px; font-size:20px; color:white;">
+                    jumlah</td>
+
+                    <td style ="padding:10px; font-size:20px; color:white;">
+                    harga</td>
+
+                    <td style ="padding:10px; font-size:20px; color:white;">
+                    Action</td>
+
+                </tr>
+
+    <form action="{{url('order')}}" method="POST"> 
+@foreach($cart as $carts)
+                <tr style="background-color:black;">
+                    <td style="padding: 10px; color:white;">
+
+                        <input type="text" name="namaproduk[]" value="{{$carts->product_tittle}}" hidden="">
+
+                        {{$carts->product_tittle}}
+
+                    </td>
+
+                    <td style="padding: 10px; color:white;">
+                    
+                        <input type="text" name="jumlah[]" value="{{$carts->jumlah}}" hidden="">
+                        
+                        {{$carts->jumlah}}
+
+                    </td>
+
+                    <td style="padding: 10px; color:white;">
+                        
+                        <input type="text" name="harga[]" value="{{$carts->harga}}" hidden="">
+                        
+                        {{$carts->harga}}
+                    
+                    </td>
+
+                    
+                    <td style="padding: 10px; color:white;">
+                        
+                        <a class="btn btn-danger" href="{{url('delete',$carts->id)}}">
+                            Delete</a></td>
+            
+            </tr>  
+            
+            @endforeach
+
+        </table>
+        
+        <button class="btn btn-success">konfirmasi</button>
+
+    </form>
         
         <footer>
         <div class="container">
